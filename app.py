@@ -153,8 +153,9 @@ if __name__=="__main__":
             Write blog posts in html format.
             Write the theme of your blog as "{topic}".
             Highlight, bold, or italicize important words or sentences.
-            Please include the restaurant's address, menu recommendations and other helpful information(opening and closing hours) as a list style.
-            Please make the entire blog less than 15 minutes long.
+            Please include the restaurant's address, menu recommendations and other helpful information(such as opening and closing hours) as a list style.
+            Please make the blog readable for more than 10 minutes. The number of words in the blog must be at least 600 words.
+            Please fill out the details about Topic.
             The audience of this article is 20-40 years old.
             Create several hashtags and add them only at the end of the line.
             Add a summary of the entire article at the beginning of the blog post.
