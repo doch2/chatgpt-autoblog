@@ -11,7 +11,7 @@ import os
 import time
 
 
-load_dotenv(verbose=True, dotenv_path="/home/ec2-user/blog/environment.env")
+load_dotenv(verbose=True, dotenv_path="/blog/environment.env")
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
 
