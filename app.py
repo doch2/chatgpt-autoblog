@@ -111,6 +111,19 @@ def getPostTagIdList(authHeader, tagNameList):
 
     return tagIndexList
 
+def isDuplicationPostTopic(topic):
+    url = "https://variousinfo.site/wp-json/wp/v2/posts"
+    responce = requests.get(url)
+
+    postTopicList = []
+    for postData in json.loads(responce.content):
+        postTopicList.append(postData['title']['rendered'])
+    
+    if topic in postTopicList:
+        return True
+    else:
+        return False
+
 def getPostRandomDate():
     start = datetime.strptime('1/1/2022 1:30 PM', '%m/%d/%Y %I:%M %p')
     end = datetime.strptime('1/31/2023 4:50 AM', '%m/%d/%Y %I:%M %p')
@@ -131,6 +144,11 @@ if __name__=="__main__":
         print(f"{category}의 Topic 리스트: {topicList}")
 
         for topic in topicList:
+            if isDuplicationPostTopic(topic):
+                print(f"{topic}는 중복된 Topic으로 포스팅을 진행하지 않습니다.")
+                continue
+
+
             prompt = f'''
             Write blog posts in html format.
             Write the theme of your blog as "{topic}".
@@ -157,6 +175,8 @@ if __name__=="__main__":
                     'date'   : getPostRandomDate()
                 }
             )
+
+            print(f"{category}의 {topic} 생성 완료")
 
             time.sleep(180) #너무 빠른 생성을 막기위한 딜레이
 
