@@ -36,7 +36,13 @@ def getChatGPTResult(prompt):
     return completion
 
 def getBlogTopicList(topic):
-    response = getChatGPTResult(f'Please recommend 35x blog topics related to {topic}.')
+    response = getChatGPTResult(
+        f'''
+        Please recommend 20x blog topics related to {topic}.
+        Please recommend a topic that is the latest and attracting people's attention.
+        Please recommend a topic with expertise.
+        '''
+    )
     pureData = response.choices[0].text.split('\n')
 
     pureData= [v for v in pureData if v] #빈 문자열 제거
@@ -155,7 +161,7 @@ if __name__=="__main__":
             Highlight, bold, or italicize important words or sentences.
             Please include the restaurant's address, menu recommendations and other helpful information(such as opening and closing hours) as a list style.
             Please make the blog readable for more than 10 minutes. The number of words in the blog must be at least 600 words.
-            Please fill out the details about Topic.
+            Please fill in the content so that it contains professional content on the subject.
             The audience of this article is 20-40 years old.
             Create several hashtags and add them only at the end of the line.
             Add a summary of the entire article at the beginning of the blog post.
