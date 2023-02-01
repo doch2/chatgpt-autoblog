@@ -38,7 +38,7 @@ def getChatGPTResult(prompt):
 def getBlogTopicList(topic):
     response = getChatGPTResult(
         f'''
-        Please recommend 20x blog topics related to {topic}.
+        Please recommend 75x blog topics related to {topic}.
         Please recommend a topic that is the latest and attracting people's attention.
         Please recommend a topic with expertise.
         '''
@@ -185,5 +185,5 @@ if __name__=="__main__":
 
             print(f"{category}의 {topic} 생성 완료")
 
-            time.sleep(180) #너무 빠른 생성을 막기위한 딜레이
+            #time.sleep(180) #너무 빠른 생성을 막기위한 딜레이
 
