@@ -12,6 +12,7 @@ import time
 
 
 load_dotenv(verbose=True, dotenv_path="/blog/environment.env")
+time.sleep(1) #환경변수 로드를 위한 딜레이
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
 

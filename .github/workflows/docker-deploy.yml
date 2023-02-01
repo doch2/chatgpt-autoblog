@@ -62,4 +62,4 @@ jobs:
       - name: Docker run
         run: |
           docker stop ${{ env.NAME }} && docker rm ${{ env.NAME }} && docker rmi ${{ env.DOCKER_IMAGE }}:latest
-          docker run -d -v /home/ec2-user/blog:/blog --name chatgpt-autoblog --restart always --env-file=/home/ec2-user/blog/environment.env ${{ env.DOCKER_IMAGE }}:latest
+          docker run -d -v /home/ec2-user/blog:/blog --name chatgpt-autoblog --restart always ${{ env.DOCKER_IMAGE }}:latest
