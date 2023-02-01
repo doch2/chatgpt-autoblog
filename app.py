@@ -27,7 +27,7 @@ def getChatGPTResult(prompt):
         engine=model_engine,
         prompt=prompt,
         max_tokens=max_tokens,
-        temperature=0.5,      # creativity
+        temperature=0.6,      # creativity
         top_p=1,
         frequency_penalty=0,
         presence_penalty=0
@@ -35,7 +35,7 @@ def getChatGPTResult(prompt):
     return completion
 
 def getBlogTopicList(topic):
-    response = getChatGPTResult(f'Please recommend 50x blog topics related to {topic}.')
+    response = getChatGPTResult(f'Please recommend 35x blog topics related to {topic}.')
     pureData = response.choices[0].text.split('\n')
 
     pureData= [v for v in pureData if v] #빈 문자열 제거
