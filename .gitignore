@@ -1,2 +1,4 @@
 .DS_Store
 .env
+
+*_temp_image.jpg
